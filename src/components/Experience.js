@@ -64,12 +64,6 @@ class Experience extends Component {
                     type="text" 
                     onChange={this.handleInputChange} 
                     isEditable={isEditable} />
-                {/* <InputField 
-                    label="Tasks: " 
-                    value={this.state.tasks} 
-                    type="text"
-                    onChange={this.handleTasksChange} 
-                    isEditable={isEditable} /> */}
                 <TextAreaInput 
                     name="tasks"
                     label="Tasks: " 
