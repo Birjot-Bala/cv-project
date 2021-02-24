@@ -12,34 +12,16 @@ class Contact extends Component {
             editable: true,
         };
 
-        this.handleNameChange = this.handleNameChange.bind(this);
-        this.handleEmailChange = this.handleEmailChange.bind(this);
-        this.handlePhoneChange = this.handlePhoneChange.bind(this);
-        this.handleEditClick = this.handleEditClick.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
 
+        this.handleEditClick = this.handleEditClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleNameChange(e) {
-        // Shallow copy of state
-        const copy = Object.assign({}, this.state);
-        copy.name = e.target.value;
-
-        this.setState(copy);
-    }
-
-    handleEmailChange(e) {
-        const copy = Object.assign({}, this.state);
-        copy.email = e.target.value;
-
-        this.setState(copy);
-    }
-
-    handlePhoneChange(e) {
-        const copy = Object.assign({}, this.state);
-        copy.phone = e.target.value;
-
-        this.setState(copy);
+    handleInputChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
     }
 
     handleEditClick(e) {
@@ -65,22 +47,25 @@ class Contact extends Component {
                 <h2>Contact</h2>
                 <form onSubmit={this.handleSubmit}>
                     <InputField 
+                        name="name"
                         label="Name: " 
                         value={this.state.name} 
                         type="text" 
-                        onChange={this.handleNameChange} 
+                        onChange={this.handleInputChange} 
                         isEditable={isEditable} />
                     <InputField 
+                        name="email"
                         label="Email: " 
                         value={this.state.email} 
                         type="email" 
-                        onChange={this.handleEmailChange} 
+                        onChange={this.handleInputChange} 
                         isEditable={isEditable} />
                     <InputField 
+                        name="phone"
                         label="Phone: " 
                         value={this.state.phone} 
                         type= "text" 
-                        onChange={this.handlePhoneChange} 
+                        onChange={this.handleInputChange} 
                         isEditable={isEditable} />
                     {isEditable 
                         ? <input type="submit" value="Save" />

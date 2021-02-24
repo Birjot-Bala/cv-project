@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 
-class InputField extends Component {
+class TextAreaInput extends Component {
 
     render() {
-        const { name, label, value, type, onChange, isEditable } = this.props;
+        const { name, label, value, onChange, isEditable } = this.props;
         
         if (isEditable) {
             return (
                 <div>
                     <label>
-                        {label}
-                        <input name={name} type={type} value={value} onChange={onChange} />
+                        {label} 
+                        <textarea name={name} value={value} onChange={onChange} />
                     </label>
                 </div>
             );
@@ -18,11 +18,11 @@ class InputField extends Component {
             return (
                 <div>
                     {label}
-                    <span>{value}</span>
+                    <textarea readOnly value={value} />
                 </div>
             );
         }
     }
 }
 
-export default InputField;
+export default TextAreaInput;

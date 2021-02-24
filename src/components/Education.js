@@ -12,33 +12,17 @@ class Education extends Component {
             editable: true,
         }
 
-        this.handleSchoolChange = this.handleSchoolChange.bind(this);
-        this.handleStudyChange = this.handleStudyChange.bind(this);
-        this.handleDateChange = this.handleDateChange.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
 
         this.handleEditClick = this.handleEditClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSchoolChange(e) {
-        const copy = Object.assign({}, this.state);
-        copy.school = e.target.value;
 
-        this.setState(copy);
-    }
-
-    handleStudyChange(e) {
-        const copy = Object.assign({}, this.state);
-        copy.study = e.target.value;
-
-        this.setState(copy);
-    }
-
-    handleDateChange(e) {
-        const copy = Object.assign({}, this.state);
-        copy.date = e.target.value;
-
-        this.setState(copy);
+    handleInputChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
     }
 
     handleEditClick(e) {
@@ -65,22 +49,25 @@ class Education extends Component {
             <h2>Education</h2>
             <form onSubmit={this.handleSubmit}>
                 <InputField 
+                    name="school"
                     label="School: " 
                     value={this.state.school} 
                     type="text"
-                    onChange={this.handleSchoolChange} 
+                    onChange={this.handleInputChange} 
                     isEditable={isEditable} />
                 <InputField 
+                    name="study"
                     label="Study: " 
                     value={this.state.study}
                     type="text" 
-                    onChange={this.handleStudyChange} 
+                    onChange={this.handleInputChange} 
                     isEditable={isEditable} />
                 <InputField 
+                    name="date"
                     label="Date: " 
                     value={this.state.date} 
                     type="date"
-                    onChange={this.handleDateChange} 
+                    onChange={this.handleInputChange} 
                     isEditable={isEditable} />
                 {isEditable 
                     ? <input type="submit" value="Save" />

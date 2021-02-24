@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import InputField from "./InputField";
+import TextAreaInput from "./TextAreaInput"
 
 class Experience extends Component {
     constructor(props) {
@@ -13,51 +14,18 @@ class Experience extends Component {
             dateTo: "",
             editable: true,
         }
-
-        this.handleCompanyChange = this.handleCompanyChange.bind(this);
-        this.handlePositionChange = this.handlePositionChange.bind(this);
-        this.handleTasksChange = this.handleTasksChange.bind(this);
-        this.handleDateFromChange = this.handleDateFromChange.bind(this);
-        this.handleDateToChange = this.handleDateToChange.bind(this);
+        
+        this.handleInputChange = this.handleInputChange.bind(this);
 
         this.handleEditClick = this.handleEditClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    handleCompanyChange(e) {
-        const copy = Object.assign({}, this.state);
-        copy.company = e.target.value;
-
-        this.setState(copy);
-    }
-
-    handlePositionChange(e) {
-        const copy = Object.assign({}, this.state);
-        copy.position = e.target.value;
-
-        this.setState(copy);
-    }
-
-    handleTasksChange(e) {
-        const copy = Object.assign({}, this.state);
-        copy.tasks = e.target.value;
-
-        this.setState(copy);
-    }
-
-    handleDateFromChange(e) {
-        const copy = Object.assign({}, this.state);
-        copy.dateFrom = e.target.value;
-
-        this.setState(copy);
-    }
-
-    handleDateToChange(e) {
-        const copy = Object.assign({}, this.state);
-        copy.dateTo = e.target.value;
-
-        this.setState(copy);
-    }
+ 
+    handleInputChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    } 
 
     handleEditClick(e) {
         const copy = Object.assign({}, this.state);
@@ -83,34 +51,44 @@ class Experience extends Component {
             <h2>Experience</h2>
             <form onSubmit={this.handleSubmit}>
                 <InputField 
+                    name="company"
                     label="Company: " 
                     value={this.state.company} 
                     type="text"
-                    onChange={this.handleCompanyChange} 
+                    onChange={this.handleInputChange} 
                     isEditable={isEditable} />
                 <InputField 
+                    name="position"
                     label="Position: " 
                     value={this.state.position}
                     type="text" 
-                    onChange={this.handlePositionChange} 
+                    onChange={this.handleInputChange} 
                     isEditable={isEditable} />
-                <InputField 
+                {/* <InputField 
                     label="Tasks: " 
                     value={this.state.tasks} 
                     type="text"
                     onChange={this.handleTasksChange} 
+                    isEditable={isEditable} /> */}
+                <TextAreaInput 
+                    name="tasks"
+                    label="Tasks: " 
+                    value={this.state.tasks} 
+                    onChange={this.handleInputChange} 
                     isEditable={isEditable} />
                 <InputField
+                    name="dateFrom"
                     label="Start: "
                     value={this.state.dateFrom}
                     type="date"
-                    onChange={this.handleDateFromChange}
+                    onChange={this.handleInputChange}
                     isEditable={isEditable} />
                 <InputField
+                    name="dateTo"
                     label="End: "
                     value={this.state.dateTo}
                     type="date"
-                    onChange={this.handleDateToChange}
+                    onChange={this.handleInputChange}
                     isEditable={isEditable} />
                 {isEditable 
                     ? <input type="submit" value="Save" />
