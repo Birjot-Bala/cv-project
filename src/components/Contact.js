@@ -9,11 +9,13 @@ class Contact extends Component {
             name: "",
             email: "",
             phone: "",
+            editable: true,
         };
 
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handlePhoneChange = this.handlePhoneChange.bind(this);
+        this.handleEditClick = this.handleEditClick.bind(this);
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -40,19 +42,34 @@ class Contact extends Component {
         this.setState(copy);
     }
 
-    handleSubmit(event) {
-        alert(this.state.name + this.state.email + this.state.phone);
+    handleEditClick(e) {
+        const copy = Object.assign({}, this.state);
+        copy.editable = true;
+
+        this.setState(copy);
+    }
+
+    handleSubmit(e) {
+        const copy = Object.assign({}, this.state);
+        copy.editable = false;
+        
+        this.setState(copy);
+        e.preventDefault();
     }
 
     render() {
+        const isEditable = this.state.editable;
+
         return (
             <div>
                 <h2>Contact</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <TextInput label="Name: " value={this.state.name} onChange={this.handleNameChange} />
-                    <TextInput label="Email: " value={this.state.email} onChange={this.handleEmailChange} />
-                    <TextInput label="Phone: " value={this.state.phone} onChange={this.handlePhoneChange} />
-                    <input type="submit" value="Submit" />
+                    <TextInput label="Name: " value={this.state.name} onChange={this.handleNameChange} isEditable={isEditable} />
+                    <TextInput label="Email: " value={this.state.email} onChange={this.handleEmailChange} isEditable={isEditable} />
+                    <TextInput label="Phone: " value={this.state.phone} onChange={this.handlePhoneChange} isEditable={isEditable} />
+                    {isEditable 
+                        ? <input type="submit" value="Save" />
+                        : <button onClick={this.handleEditClick}>Edit</button>}
                 </form>
             </div>
         );
