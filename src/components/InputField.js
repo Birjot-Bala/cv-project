@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 
-class TextInput extends Component {
+class InputField extends Component {
 
     render() {
-        const { label, value, onChange, isEditable } = this.props;
+        const { label, value, type, onChange, isEditable } = this.props;
         
         if (isEditable) {
             return (
                 <div>
                     <label>
                         {label}
-                        <input type="text" value={value} onChange={onChange} />
+                        <input type={type} value={value} onChange={onChange} />
                     </label>
                 </div>
             );
@@ -25,4 +25,4 @@ class TextInput extends Component {
     }
 }
 
-export default TextInput;
+export default InputField;

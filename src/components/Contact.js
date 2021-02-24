@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TextInput from "./TextInput";
+import InputField from "./InputField";
 
 class Contact extends Component {
     constructor(props) {
@@ -64,9 +64,24 @@ class Contact extends Component {
             <div>
                 <h2>Contact</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <TextInput label="Name: " value={this.state.name} onChange={this.handleNameChange} isEditable={isEditable} />
-                    <TextInput label="Email: " value={this.state.email} onChange={this.handleEmailChange} isEditable={isEditable} />
-                    <TextInput label="Phone: " value={this.state.phone} onChange={this.handlePhoneChange} isEditable={isEditable} />
+                    <InputField 
+                        label="Name: " 
+                        value={this.state.name} 
+                        type="text" 
+                        onChange={this.handleNameChange} 
+                        isEditable={isEditable} />
+                    <InputField 
+                        label="Email: " 
+                        value={this.state.email} 
+                        type="email" 
+                        onChange={this.handleEmailChange} 
+                        isEditable={isEditable} />
+                    <InputField 
+                        label="Phone: " 
+                        value={this.state.phone} 
+                        type= "text" 
+                        onChange={this.handlePhoneChange} 
+                        isEditable={isEditable} />
                     {isEditable 
                         ? <input type="submit" value="Save" />
                         : <button onClick={this.handleEditClick}>Edit</button>}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Contact from "./components/Contact"
+import Education from "./components/Education";
 
 
 
@@ -9,6 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Contact />
+        <Education />
       </div>
     );
   }
