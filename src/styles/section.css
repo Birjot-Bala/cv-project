@@ -5,14 +5,27 @@ label {
     margin-bottom: 5px;
 }
 
+.section {
+    margin-top: 1em;
+}
+
 .edit-button {
     margin-top: 5px;
     border: 1px solid black;
     border-radius: 3px;
     font-size: medium;
+    float: right;
 }
 
 .submit-button {
+    margin-top: 5px;
+    font-size: medium;
+    border: 1px solid black;
+    border-radius: 3px;
+    float: right;
+}
+
+.add-button {
     margin-top: 5px;
     font-size: medium;
     border: 1px solid black;
@@ -23,12 +36,31 @@ textarea {
     box-sizing:border-box;
     width: 100%;
     resize: vertical;
+    font: inherit;
 }
 
 .read-only-text {
     border: none;
     background-color: transparent;
+    margin-top: 1em;
     resize: none;
+    font: inherit;
+}
+
+.saved-text {
+    margin-top: 0.5em;
+}
+
+input {
+    margin-top: 0.5em;
+}
+
+.study {
+    font-weight: bold;
+}
+
+.position {
+    font-weight: bold;
 }
 
 .name {

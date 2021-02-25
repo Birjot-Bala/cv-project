@@ -17,7 +17,6 @@ class TextAreaInput extends Component {
         } else {
             return (
                 <div>
-                    {label}
                     <textarea className="read-only-text" readOnly value={value} wrap="hard" />
                 </div>
             );

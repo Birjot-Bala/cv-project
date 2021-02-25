@@ -10,13 +10,13 @@ class InputField extends Component {
                 <div>
                     <label>
                         {label}
-                        <input name={name} type={type} value={value} onChange={onChange} />
+                        <input name={name} type={type} value={value} onChange={onChange} required />
                     </label>
                 </div>
             );
         } else {
             return (
-                <div>
+                <div className="saved-text">
                     <span className={name}>{value}</span>
                 </div>
             );

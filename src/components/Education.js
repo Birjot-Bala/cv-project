@@ -45,20 +45,23 @@ class Education extends Component {
         const isEditable = this.state.editable;
 
         return (
-            <div>
+            <div className="section">
                 <form onSubmit={this.handleSubmit}>
-                    <InputField 
-                        name="school"
-                        label="School: " 
-                        value={this.state.school} 
-                        type="text"
-                        onChange={this.handleInputChange} 
-                        isEditable={isEditable} />
+                    {isEditable 
+                        ? <input className="submit-button" type="submit" value="Save" />
+                        : <button className="edit-button" onClick={this.handleEditClick}>Edit</button>}
                     <InputField 
                         name="study"
                         label="Study: " 
                         value={this.state.study}
                         type="text" 
+                        onChange={this.handleInputChange} 
+                        isEditable={isEditable} />
+                    <InputField 
+                        name="school"
+                        label="School: " 
+                        value={this.state.school} 
+                        type="text"
                         onChange={this.handleInputChange} 
                         isEditable={isEditable} />
                     <InputField 
@@ -68,9 +71,6 @@ class Education extends Component {
                         type="date"
                         onChange={this.handleInputChange} 
                         isEditable={isEditable} />
-                    {isEditable 
-                        ? <input className="submit-button" type="submit" value="Save" />
-                        : <button className="edit-button" onClick={this.handleEditClick}>Edit</button>}
                 </form>
             </div>
         )

@@ -8,6 +8,27 @@ import './styles/section.css'
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      education: [],
+      experience: [],
+    }
+
+    this.handleAddClick = this.handleAddClick.bind(this);
+  }
+
+  handleAddClick(e) {
+    const name = e.target.name;
+    this.setState({
+      [name]: [...this.state[name],
+        name === "education" 
+          ? <Education key={(this.state.education.length + 1).toString()} /> 
+          : <Experience key={(this.state.experience.length + 1).toString()}/>
+        ]
+    });
+  }
 
   render() {
     return (
@@ -16,9 +37,11 @@ class App extends Component {
         <div className="page">
           <Contact />
           <h2>Education</h2>
-          <Education />
+          {this.state.education}
+          <button className="add-button" name="education" onClick={this.handleAddClick}>Add</button>
           <h2>Experience</h2>
-          <Experience />
+          {this.state.experience}
+          <button className="add-button" name="experience" onClick={this.handleAddClick}>Add</button>
         </div>
       </div>
     );

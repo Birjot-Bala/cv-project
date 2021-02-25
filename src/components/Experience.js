@@ -47,15 +47,11 @@ class Experience extends Component {
         const isEditable = this.state.editable;
 
         return (
-            <div>
+            <div className="section">
                 <form onSubmit={this.handleSubmit}>
-                    <InputField 
-                        name="company"
-                        label="Company: " 
-                        value={this.state.company} 
-                        type="text"
-                        onChange={this.handleInputChange} 
-                        isEditable={isEditable} />
+                    {isEditable 
+                        ? <input className="submit-button" type="submit" value="Save" />
+                        : <button className="edit-button" onClick={this.handleEditClick}>Edit</button>}
                     <InputField 
                         name="position"
                         label="Position: " 
@@ -63,10 +59,11 @@ class Experience extends Component {
                         type="text" 
                         onChange={this.handleInputChange} 
                         isEditable={isEditable} />
-                    <TextAreaInput 
-                        name="tasks"
-                        label="Tasks: " 
-                        value={this.state.tasks} 
+                    <InputField 
+                        name="company"
+                        label="Company: " 
+                        value={this.state.company} 
+                        type="text"
                         onChange={this.handleInputChange} 
                         isEditable={isEditable} />
                     <InputField
@@ -83,9 +80,12 @@ class Experience extends Component {
                         type="date"
                         onChange={this.handleInputChange}
                         isEditable={isEditable} />
-                    {isEditable 
-                        ? <input className="submit-button" type="submit" value="Save" />
-                        : <button className="edit-button" onClick={this.handleEditClick}>Edit</button>}
+                    <TextAreaInput 
+                        name="tasks"
+                        label="Tasks: " 
+                        value={this.state.tasks} 
+                        onChange={this.handleInputChange} 
+                        isEditable={isEditable} />
                 </form>
             </div>
         )
