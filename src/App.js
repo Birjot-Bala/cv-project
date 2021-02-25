@@ -13,12 +13,13 @@ class App extends Component {
     return (
       <div className="App">
         <h1>CV App</h1>
-        <h2>Contact</h2>
-        <Contact />
-        <h2>Education</h2>
-        <Education />
-        <h2>Experience</h2>
-        <Experience />
+        <div className="page">
+          <Contact />
+          <h2>Education</h2>
+          <Education />
+          <h2>Experience</h2>
+          <Experience />
+        </div>
       </div>
     );
   }

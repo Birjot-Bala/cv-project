@@ -1,9 +1,17 @@
 .App {
     display:flex;
     flex-direction: column;
-    margin-left: 10%;
-    margin-right: 10%;
+    align-items: center;
     min-width: max-content;
+}
+
+.page {
+    box-sizing: border-box;
+    width: 8.5in;
+    height: 11in;
+    border: 1px solid black;
+    padding: 1in;
+    box-shadow: 0px 2px 5px gray;
 }
 
 h1 {
@@ -14,4 +22,5 @@ h1 {
 h2 {
     border-bottom: 1px solid lightgray;
     padding-bottom: 5px;
+    font-size: 16px;
 }

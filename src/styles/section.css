@@ -18,3 +18,14 @@ label {
     border: 1px solid black;
     border-radius: 3px;
 }
+
+textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+.read-only-text {
+    border: none;
+    background-color: transparent;
+    resize: none;
+}

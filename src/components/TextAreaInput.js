@@ -10,7 +10,7 @@ class TextAreaInput extends Component {
                 <div>
                     <label>
                         {label} 
-                        <textarea name={name} value={value} onChange={onChange} />
+                        <textarea name={name} value={value} onChange={onChange} wrap="hard" />
                     </label>
                 </div>
             );
@@ -18,7 +18,7 @@ class TextAreaInput extends Component {
             return (
                 <div>
                     {label}
-                    <textarea readOnly value={value} />
+                    <textarea className="read-only-text" readOnly value={value} wrap="hard" />
                 </div>
             );
         }
