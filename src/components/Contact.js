@@ -44,7 +44,6 @@ class Contact extends Component {
 
         return (
             <div>
-                <h2>Contact</h2>
                 <form onSubmit={this.handleSubmit}>
                     <InputField 
                         name="name"
@@ -68,8 +67,8 @@ class Contact extends Component {
                         onChange={this.handleInputChange} 
                         isEditable={isEditable} />
                     {isEditable 
-                        ? <input type="submit" value="Save" />
-                        : <button onClick={this.handleEditClick}>Edit</button>}
+                        ? <input className="submit-button" type="submit" value="Save" />
+                        : <button className="edit-button" onClick={this.handleEditClick}>Edit</button>}
                 </form>
             </div>
         );

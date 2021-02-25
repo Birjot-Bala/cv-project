@@ -46,34 +46,33 @@ class Education extends Component {
 
         return (
             <div>
-            <h2>Education</h2>
-            <form onSubmit={this.handleSubmit}>
-                <InputField 
-                    name="school"
-                    label="School: " 
-                    value={this.state.school} 
-                    type="text"
-                    onChange={this.handleInputChange} 
-                    isEditable={isEditable} />
-                <InputField 
-                    name="study"
-                    label="Study: " 
-                    value={this.state.study}
-                    type="text" 
-                    onChange={this.handleInputChange} 
-                    isEditable={isEditable} />
-                <InputField 
-                    name="date"
-                    label="Date: " 
-                    value={this.state.date} 
-                    type="date"
-                    onChange={this.handleInputChange} 
-                    isEditable={isEditable} />
-                {isEditable 
-                    ? <input type="submit" value="Save" />
-                    : <button onClick={this.handleEditClick}>Edit</button>}
-            </form>
-        </div>
+                <form onSubmit={this.handleSubmit}>
+                    <InputField 
+                        name="school"
+                        label="School: " 
+                        value={this.state.school} 
+                        type="text"
+                        onChange={this.handleInputChange} 
+                        isEditable={isEditable} />
+                    <InputField 
+                        name="study"
+                        label="Study: " 
+                        value={this.state.study}
+                        type="text" 
+                        onChange={this.handleInputChange} 
+                        isEditable={isEditable} />
+                    <InputField 
+                        name="date"
+                        label="Date: " 
+                        value={this.state.date} 
+                        type="date"
+                        onChange={this.handleInputChange} 
+                        isEditable={isEditable} />
+                    {isEditable 
+                        ? <input className="submit-button" type="submit" value="Save" />
+                        : <button className="edit-button" onClick={this.handleEditClick}>Edit</button>}
+                </form>
+            </div>
         )
     }
 }

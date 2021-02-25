@@ -48,47 +48,46 @@ class Experience extends Component {
 
         return (
             <div>
-            <h2>Experience</h2>
-            <form onSubmit={this.handleSubmit}>
-                <InputField 
-                    name="company"
-                    label="Company: " 
-                    value={this.state.company} 
-                    type="text"
-                    onChange={this.handleInputChange} 
-                    isEditable={isEditable} />
-                <InputField 
-                    name="position"
-                    label="Position: " 
-                    value={this.state.position}
-                    type="text" 
-                    onChange={this.handleInputChange} 
-                    isEditable={isEditable} />
-                <TextAreaInput 
-                    name="tasks"
-                    label="Tasks: " 
-                    value={this.state.tasks} 
-                    onChange={this.handleInputChange} 
-                    isEditable={isEditable} />
-                <InputField
-                    name="dateFrom"
-                    label="Start: "
-                    value={this.state.dateFrom}
-                    type="date"
-                    onChange={this.handleInputChange}
-                    isEditable={isEditable} />
-                <InputField
-                    name="dateTo"
-                    label="End: "
-                    value={this.state.dateTo}
-                    type="date"
-                    onChange={this.handleInputChange}
-                    isEditable={isEditable} />
-                {isEditable 
-                    ? <input type="submit" value="Save" />
-                    : <button onClick={this.handleEditClick}>Edit</button>}
-            </form>
-        </div>
+                <form onSubmit={this.handleSubmit}>
+                    <InputField 
+                        name="company"
+                        label="Company: " 
+                        value={this.state.company} 
+                        type="text"
+                        onChange={this.handleInputChange} 
+                        isEditable={isEditable} />
+                    <InputField 
+                        name="position"
+                        label="Position: " 
+                        value={this.state.position}
+                        type="text" 
+                        onChange={this.handleInputChange} 
+                        isEditable={isEditable} />
+                    <TextAreaInput 
+                        name="tasks"
+                        label="Tasks: " 
+                        value={this.state.tasks} 
+                        onChange={this.handleInputChange} 
+                        isEditable={isEditable} />
+                    <InputField
+                        name="dateFrom"
+                        label="Start: "
+                        value={this.state.dateFrom}
+                        type="date"
+                        onChange={this.handleInputChange}
+                        isEditable={isEditable} />
+                    <InputField
+                        name="dateTo"
+                        label="End: "
+                        value={this.state.dateTo}
+                        type="date"
+                        onChange={this.handleInputChange}
+                        isEditable={isEditable} />
+                    {isEditable 
+                        ? <input className="submit-button" type="submit" value="Save" />
+                        : <button className="edit-button" onClick={this.handleEditClick}>Edit</button>}
+                </form>
+            </div>
         )
     }
 }

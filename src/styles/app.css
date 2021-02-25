@@ -1,0 +1,17 @@
+.App {
+    display:flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    min-width: max-content;
+}
+
+h1 {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
+}
+
+h2 {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
+}
