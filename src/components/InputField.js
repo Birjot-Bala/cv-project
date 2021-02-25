@@ -17,7 +17,7 @@ class InputField extends Component {
         } else {
             return (
                 <div>
-                    <span>{value}</span>
+                    <span className={name}>{value}</span>
                 </div>
             );
         }

@@ -12,6 +12,7 @@
     border: 1px solid black;
     padding: 1in;
     box-shadow: 0px 2px 5px gray;
+    font-size: 12px;
 }
 
 h1 {
@@ -23,4 +24,5 @@ h2 {
     border-bottom: 1px solid lightgray;
     padding-bottom: 5px;
     font-size: 16px;
+    font-weight: normal;
 }

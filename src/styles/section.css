@@ -20,6 +20,7 @@ label {
 }
 
 textarea {
+    box-sizing:border-box;
     width: 100%;
     resize: vertical;
 }
@@ -28,4 +29,9 @@ textarea {
     border: none;
     background-color: transparent;
     resize: none;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
 }
